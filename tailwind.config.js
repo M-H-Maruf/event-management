@@ -12,7 +12,7 @@ export default {
     },
     extend: {
       colors: {
-        "event-primary": "#3377bc",
+        "event-primary": "#2b60de",
         "event-secondary": "#292929",
         "event-bg-social": "#313131",
         "event-bg-folio": "#343434",

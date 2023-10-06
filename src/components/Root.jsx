@@ -15,7 +15,7 @@ const Root = () => {
         })
        },[])
     return (
-        <div className='font-mukta tracking-widest'>
+        <div className='font-mukta tracking-widest relative'>
             <Navbar></Navbar>
             <Outlet></Outlet>
         </div>

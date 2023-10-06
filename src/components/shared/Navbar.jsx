@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   // active route styling
   const activeLink =
-    "text-donation-primary font-bold underline decoration-2 underline-offset-4";
+    "text-event-primary font-bold underline decoration-2 underline-offset-4";
 
   // navbar routes
   const navLinks = (
@@ -31,9 +31,9 @@ const Navbar = () => {
   );
 
   return (
-    <div data-aos="fade-down" className="navbar bg-event-secondary pl-0">
+    <div data-aos="fade-down" className="navbar bg-event-secondary pl-0 md:p-4">
       <div className="navbar-start">
-        <details className="dropdown duration-200">
+        <details className="dropdown duration-200 lg:hidden">
           <summary className="m-1 btn glass group">
             <GiHamburgerMenu className="text-2xl text-white opacity-80 group-hover:text-event-secondary"></GiHamburgerMenu>
           </summary>
