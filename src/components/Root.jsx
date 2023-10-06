@@ -1,10 +1,23 @@
 
-import Home from './home/Home';
+import { Outlet } from 'react-router-dom';
+
+import Navbar from './shared/Navbar';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Root = () => {
+    useEffect(() => {
+        Aos.init({
+            easing: 'ease-out-quart',
+            delay: 0,
+            duration: 750
+        })
+       },[])
     return (
-        <div>
-            <Home></Home>
+        <div className='font-mukta tracking-widest'>
+            <Navbar></Navbar>
+            <Outlet></Outlet>
         </div>
     );
 };

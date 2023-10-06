@@ -5,7 +5,22 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      'teko': ['Teko', 'sans-serif'],
+      'mukta': ['Mukta', 'sans-serif'],
+      'orbitron': ['Orbitron', 'sans-serif'],
+    },
+    extend: {
+      colors: {
+        "event-primary": "#3377bc",
+        "event-secondary": "#292929",
+        "event-bg-social": "#313131",
+        "event-bg-folio": "#343434",
+        "event-bg-menu": "#212121",
+        "event-dil": "#fff40",
+        "event-text": "#99999",
+      },
+    },
   },
   plugins: [require("daisyui")],
 }
