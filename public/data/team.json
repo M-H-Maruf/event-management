@@ -1,0 +1,27 @@
+[
+    {
+      "name": "John Doe",
+      "position": "CEO",
+      "bio": "With over 15 years of experience in the industry, John leads our team with a vision for innovation and excellence. He is dedicated to ensuring that every project we undertake exceeds client expectations.",
+      "imageUrl": "https://i.ibb.co/DKf7rvj/joseph-gonzalez-i-Fg-Rcq-Hznqg-unsplash.jpg"
+    },
+    {
+      "name": "Jane Smith",
+      "position": "Lead Developer",
+      "bio": "Jane is a seasoned developer with a passion for crafting elegant and efficient solutions. Her expertise in multiple programming languages and frameworks allows us to tackle even the most complex projects with confidence.",
+      "imageUrl": "https://i.ibb.co/19BtBTD/aiony-haust-3-TLl-97-HNJo-unsplash.jpg"
+    },
+    {
+      "name": "Michael Rodriguez",
+      "position": "UX/UI Designer",
+      "bio": "Michael is a creative visionary with a keen eye for user experience and interface design. His designs not only look stunning but also ensure seamless user interactions, setting our projects apart.",
+      "imageUrl": "https://i.ibb.co/R9k95Ts/ian-dooley-d1-UPki-Fd04-A-unsplash.jpg"
+    },
+    {
+      "name": "Sarah Johnson",
+      "position": "Marketing Specialist",
+      "bio": "Sarah is a strategic thinker with a knack for marketing. Her campaigns drive engagement and resonate with our target audience. She plays a crucial role in ensuring our projects reach their full potential.",
+      "imageUrl": "https://i.ibb.co/LNcGKg6/michael-dam-m-EZ3-Po-FGs-k-unsplash.jpg"
+    }
+  ]
+  
