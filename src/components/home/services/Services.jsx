@@ -3,11 +3,10 @@ import { AuthContext } from "../../../hooks/AuthProvider";
 
 const Services = () => {
   const { services } = useContext(AuthContext);
-  console.log(services);
   return (
     <div id="Services" className="py-28">
       <h1
-        data-aos="fade-up"
+        data-aos="fade-right"
         className="font-teko font-bold text-event-text text-4xl"
       >
         OUR SERVICES
@@ -16,7 +15,7 @@ const Services = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            data-aos="fade-right"
+            data-aos="flip-left"
             className="w-80 card bg-white shadow-2xl rounded-lg tracking-tight"
           >
             <img

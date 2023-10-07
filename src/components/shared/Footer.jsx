@@ -1,9 +1,11 @@
+import { Link } from "react-scroll";
+
 const Footer = () => {
   return (
     <div  data-aos="fade-up">
-      <footer className="footer p-10 bg-[#210d4a] text-white">
+      <footer className="footer p-10 bg-[#0c0c0c] text-white">
         <aside>
-          <img className="h-24" src="/favicon.png" alt="logo" />
+          <Link spy={true} smooth={true} to="Banner"><img className="h-24" src="/favicon.png" alt="logo" /></Link>
           <p>
             AZTEC Ltd.
             <br />
