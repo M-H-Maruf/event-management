@@ -1,5 +1,7 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Navbar = () => {
   // active route styling
@@ -22,42 +24,72 @@ const Navbar = () => {
         ABOUT US
       </NavLink>
       <NavLink
+        to="/blog"
+        className={({ isActive }) => (isActive ? activeLink : "")}
+      >
+        BLOG
+      </NavLink>
+      <NavLink
+        to="/pricing"
+        className={({ isActive }) => (isActive ? activeLink : "")}
+      >
+        Pricing
+      </NavLink>
+      <NavLink
         to="/contact"
         className={({ isActive }) => (isActive ? activeLink : "")}
       >
         CONTACT US
       </NavLink>
-    </div>
+    </div> 
   );
 
+  // menu animation
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  }
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <div data-aos="fade-down" className="navbar bg-event-secondary/60 pl-0 md:p-4 fixed">
+    <div
+      data-aos="fade-down"
+      className="navbar bg-event-secondary/60 pl-0 md:p-4 fixed"
+    >
       <div className="navbar-start">
         <details className="dropdown duration-200 lg:hidden">
-          <summary className="m-1 btn glass group">
+          <summary className="m-1 btn glass group"  onClick={() => setIsOpen(isOpen => !isOpen)} >
             <GiHamburgerMenu className="text-2xl text-white opacity-80 group-hover:text-event-secondary"></GiHamburgerMenu>
           </summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-event-secondary w-52">
+          <motion.ul
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+            className="p-2 my-2 h-screen overflow-hidden shadow menu dropdown-content z-[1] bg-event-secondary/60 w-52"
+          >
             {navLinks}
-          </ul>
+          </motion.ul>
         </details>
         <a className="btn btn-ghost text-white opacity-80 normal-case text-xl font-orbitron tracking-widest">
           AZTEC
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {navLinks}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end flex gap-2 lg:gap-6">
         <div className="btn glass group">
-          <Link className="text-white opacity-80 group-hover:text-event-secondary" to="/login">
+          <Link
+            className="text-white opacity-80 group-hover:text-event-secondary"
+            to="/login"
+          >
             SIGN IN
           </Link>
         </div>
         <div className="btn glass group">
-          <Link className="text-white opacity-80 group-hover:text-event-secondary" to="/register">
+          <Link
+            className="text-white opacity-80 group-hover:text-event-secondary"
+            to="/register"
+          >
             SIGN UP
           </Link>
         </div>

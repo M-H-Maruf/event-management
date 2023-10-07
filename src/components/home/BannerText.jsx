@@ -3,12 +3,12 @@ import { TypeAnimation } from "react-type-animation";
 
 const BannerText = () => {
   return (
-    <div className="absolute h-full w-full bottom-0 flex flex-col justify-center items-center">
-      <h1 className="text-white text-4xl opacity-90 font-teko tracking-tight block">
+    <div data-aos="fade-right" className="absolute h-full w-full bottom-0 flex flex-col justify-center items-center">
+      <h1  className="text-white text-4xl opacity-90 font-teko tracking-tight block">
         WE MANAGE EVENTS OF
       </h1>
       <hr />
-      <div>
+      <div data-aos="fade-left">
         <TypeAnimation
           sequence={[
             "WEDDINGS",
@@ -31,7 +31,7 @@ const BannerText = () => {
           repeat={Infinity}
         />
       </div>
-      <p className="w-80 text-white opacity-60 font-medium text-center">Transforming moments into memories. Welcome to "Aztec", where every event is exceptional. From weddings to baby showers, we make your vision a reality with precision and passion. Let's celebrate!</p>
+      <p data-aos="fade-up-left" className="w-80 text-white opacity-60 font-medium text-center">Transforming moments into memories. Welcome to "Aztec", where every event is exceptional. From weddings to baby showers, we make your vision a reality with precision and passion. Let's celebrate!</p>
     </div>
   );
 };

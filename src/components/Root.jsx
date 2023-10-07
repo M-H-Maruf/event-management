@@ -5,6 +5,7 @@ import Navbar from './shared/Navbar';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import Footer from './shared/Footer';
 
 const Root = () => {
     useEffect(() => {
@@ -18,6 +19,7 @@ const Root = () => {
         <div className='font-mukta tracking-widest relative'>
             <Navbar></Navbar>
             <Outlet></Outlet>
+            <Footer></Footer>
         </div>
     );
 };
