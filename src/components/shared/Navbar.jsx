@@ -30,10 +30,10 @@ const Navbar = () => {
         BLOG
       </NavLink>
       <NavLink
-        to="/pricing"
+        to="/venue"
         className={({ isActive }) => (isActive ? activeLink : "")}
       >
-        Pricing
+        Venue
       </NavLink>
       <NavLink
         to="/contact"
