@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer p-10 bg-neutral text-neutral-content">
+    <div  data-aos="fade-up">
+      <footer className="footer p-10 bg-[#210d4a] text-white">
         <aside>
-          <img src="/favicon.png" alt="logo" />
+          <img className="h-24" src="/favicon.png" alt="logo" />
           <p>
-            ACME Industries Ltd.
+            AZTEC Ltd.
             <br />
-            Providing reliable tech since 1992
+            Managing events since 1992.
           </p>
         </aside>
         <nav>
@@ -47,6 +47,7 @@ const Footer = () => {
               </svg>
             </a>
           </div>
+          <p>Copyright © 2023 - All right reserved</p>
         </nav>
       </footer>
     </div>

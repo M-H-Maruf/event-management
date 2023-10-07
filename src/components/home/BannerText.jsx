@@ -3,7 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const BannerText = () => {
   return (
-    <div data-aos="fade-right" className="absolute h-full w-full bottom-0 flex flex-col justify-center items-center">
+    <div data-aos="fade-right" className="absolute flex flex-col justify-center items-center">
       <h1  className="text-white text-4xl opacity-90 font-teko tracking-tight block">
         WE MANAGE EVENTS OF
       </h1>

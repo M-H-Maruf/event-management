@@ -8,7 +8,7 @@ const Services = () => {
     <div className="py-28">
       <h1
         data-aos="fade-up"
-        className="font-teko font-bold text-event-text text-4xl z-10"
+        className="font-teko font-bold text-event-text text-4xl"
       >
         OUR SERVICES
       </h1>
@@ -22,7 +22,7 @@ const Services = () => {
             <img
               className="h-56 w-full rounded-t-lg object-cover object-center"
               src={service.image}
-              alt="Shoes"
+              alt="service"
             />
             <div className="card-body grid grid-flow-col grid-rows-3 items-start justify-center p-5">
               <div>

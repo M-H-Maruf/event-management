@@ -7,7 +7,7 @@ const Particle = () => {
   };
   const particlesLoaded = () => {};
   return (
-    <div className="absolute top-0 right-0 left-0 overflow-hidden z-[1]">
+    <div className="absolute top-0 right-0 left-0 overflow-hidden">
       <Particles
         id="tsparticles"
         init={particlesInit}
