@@ -54,17 +54,17 @@ const Navbar = () => {
   return (
     <div
       data-aos="fade-down"
-      className="navbar bg-event-secondary/60 pl-0 md:p-4 fixed z-50"
+      className="navbar bg-event-secondary/60 pl-0 md:p-4 fixed z-50 md:pl-0"
     >
       <div className="navbar-start">
         <details className="dropdown duration-200 lg:hidden">
-          <summary className="m-1 btn glass group"  onClick={() => setIsOpen(isOpen => !isOpen)} >
+          <summary className="m-1 btn glass group md:ml-4"  onClick={() => setIsOpen(isOpen => !isOpen)} >
             <GiHamburgerMenu className="text-2xl text-white opacity-80 group-hover:text-event-secondary"></GiHamburgerMenu>
           </summary>
           <motion.ul
             animate={isOpen ? "open" : "closed"}
             variants={variants}
-            className="p-2 my-2 h-screen overflow-hidden shadow menu dropdown-content z-[1] bg-event-secondary/60 w-52"
+            className="p-2 md:mt-4 my-2 h-screen overflow-hidden shadow menu dropdown-content z-[1] bg-event-secondary/60 w-52"
           >
             {navLinks}
           </motion.ul>
