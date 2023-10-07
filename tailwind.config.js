@@ -18,7 +18,7 @@ export default {
         "event-bg-folio": "#343434",
         "event-bg-menu": "#212121",
         "event-dil": "#fff40",
-        "event-text": "#99999",
+        "event-text": "#079b98",
       },
     },
   },

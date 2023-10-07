@@ -6,8 +6,8 @@ import About from "../components/about/About";
 import Contact from "../components/contact/Contact";
 import LogIn from './../components/auth/LogIn';
 import Register from './../components/auth/Register';
-import Pricing from "../components/pricing/Pricing";
 import Blog from "../components/blog/Blog";
+import Venue from "../components/venue/Venue";
 
 
 
@@ -30,8 +30,8 @@ const routes = createBrowserRouter([
             element: <Blog></Blog>
         },
         {
-            path: "/pricing",
-            element: <Pricing></Pricing>
+            path: "/venue",
+            element: <Venue></Venue>
         },
         {
             path: "/contact",

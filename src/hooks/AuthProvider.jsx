@@ -17,22 +17,27 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [services, setServices] = useState([]);
 
-  const createUser = (email, password) => {
+  // register with email
+  const createUserWithEmail = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const signIn = (email, password) => {
+  // log in with email
+  const signInWithEmail = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // logout
   const logOut = () => {
     setLoading(true);
     return signOut(auth);
   };
 
+  // monitoring user state
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -43,13 +48,22 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  //json data of services
+  useEffect(() => {
+    fetch("/data/services.json")
+      .then((response) => response.json())
+      .then((data) => setServices(data))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
 
+  // providing info
   const authInfo = {
     user,
     loading,
-    createUser,
-    signIn,
+    createUserWithEmail,
+    signInWithEmail,
     logOut,
+    services,
   };
 
   return (
