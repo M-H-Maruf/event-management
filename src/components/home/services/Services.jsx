@@ -5,7 +5,7 @@ const Services = () => {
   const { services } = useContext(AuthContext);
   console.log(services);
   return (
-    <div className="py-28">
+    <div id="Services" className="py-28">
       <h1
         data-aos="fade-up"
         className="font-teko font-bold text-event-text text-4xl"
