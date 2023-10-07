@@ -8,6 +8,7 @@ import LogIn from './../components/auth/LogIn';
 import Register from './../components/auth/Register';
 import Blog from "../components/blog/Blog";
 import Venue from "../components/venue/Venue";
+import BlogDetail from "../components/blog/BlogDetail";
 
 
 
@@ -28,7 +29,13 @@ const routes = createBrowserRouter([
         },
         {
             path: "/blog",
+            loader: ()=> fetch("/data/blogs.json"),
             element: <Blog></Blog>
+        },
+        {
+            path: "/blog/:id",
+            loader: ()=> fetch("/data/blogs.json"),
+            element: <BlogDetail></BlogDetail>
         },
         {
             path: "/venue",
