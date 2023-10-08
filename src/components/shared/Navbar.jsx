@@ -77,22 +77,22 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
       <div className="navbar-end flex gap-2 lg:gap-6">
-        <div className="btn glass group">
           <Link
-            className="text-white opacity-80 group-hover:text-event-secondary"
+            className=" group"
             to="/login"
           >
+        <div className="btn glass text-white opacity-80 group-hover:text-event-secondary">
             SIGN IN
-          </Link>
         </div>
-        <div className="btn glass group">
+          </Link>
           <Link
-            className="text-white opacity-80 group-hover:text-event-secondary"
+            className=" group"
             to="/register"
           >
+        <div className="btn glass text-white opacity-80 group-hover:text-event-secondary">
             SIGN UP
-          </Link>
         </div>
+          </Link>
       </div>
     </div>
   );

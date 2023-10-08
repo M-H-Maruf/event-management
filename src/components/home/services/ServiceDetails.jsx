@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../hooks/AuthProvider";
 import ErrorPage from "../../shared/ErrorPage";
+import Particle from './../Particle';
 
 const ServiceDetails = () => {
   const { services } = useContext(AuthContext);
@@ -21,9 +22,8 @@ const ServiceDetails = () => {
       </h1>
 
       <div
-        key={service.id}
         data-aos="flip-left"
-        className="bg-black/80 shadow-2xl rounded tracking-tight w-full max-w-6xl"
+        className="bg-black/80 shadow-2xl rounded tracking-tight w-full max-w-6xl z-10"
       >
         <img
           className="h-full rounded-t-lg object-cover object-center"
@@ -43,6 +43,7 @@ const ServiceDetails = () => {
           
         </div>
       </div>
+      <Particle></Particle>
     </div>
   );
 };

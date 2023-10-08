@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Particle from "./../home/Particle";
 
 
 const Venue = () => {
@@ -10,7 +11,7 @@ const Venue = () => {
         </h1>
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-10 font-bold p-6">
           {venues.map((venue, index) => (
-            <div data-aos="flip-up" key={index} className="bg-white/90 rounded-lg shadow-2xl h-full">
+            <div data-aos="flip-up" key={index} className="bg-white/90 rounded-lg shadow-2xl h-full z-10">
               <img src={venue.image} alt={venue.title} className="w-full h-80 object-center rounded-t-lg object-cover mb-4" />
               <div className="py-4 pb-10 p-6">
                 <h3 className="text-4xl font-teko text-black font-bold mb-2">{venue.title}</h3>
@@ -19,6 +20,7 @@ const Venue = () => {
             </div>
           ))}
         </div>
+        <Particle></Particle>
       </div>
     );
 };
