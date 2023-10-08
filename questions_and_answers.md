@@ -15,12 +15,12 @@ console.log(greetign);
 - B: `ReferenceError: greetign is not defined`
 - C: `undefined`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>A</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>Although in strict mode and certain environments it might cause a ReferenceError since greetign is not defined, the modern v8 engine declares it as a global variable when it encounters this typo. So, although it may produce option "B" in strict environments and is theoretically more accurate in a practical approach we'll encounter option "A" most of the time.</i>
 
 </p>
 </details>
@@ -40,12 +40,12 @@ sum(1, "2");
 - C: `"12"`
 - D: `3`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>C</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>Modern JavaScript performs type coercion and and converts the number to a string while adding it to another string. Thus the answer will be option "C".</i>
 
 </p>
 </details>
@@ -66,12 +66,12 @@ console.log(food);
 - C: `['🍝', '🍕', '🍫', '🥑', '🍔']`
 - D: `ReferenceError`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>A</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>The object info is created with the value of food[0] in a completely different location of memory. So, although the code above updates the object info it has no effect whatsoever on the original food array. Thus it remains unchanged and the answer will be option "A".</i>
 
 </p>
 </details>
@@ -91,12 +91,12 @@ console.log(sayHi());
 - C: `Hi there, null`
 - D: `ReferenceError`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>B</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>Although the code above uses template string and is capable of inserting a value for name, we don't provide the argument for the name parameter while calling the sayHi() function. Thus the value of the name parameter remains undefined. In conclusion, the answer will be option "B".</i>
 
 </p>
 </details>
@@ -119,12 +119,12 @@ console.log(count);
 - C: 3
 - D: 4
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>C</b></summary>
 <p>
 
 #### Answer: ?
 
-<i>Write your explanation here</i>
+<i>Although there are 4 elements in the nums array and the forEach method runs 4 times, 0, the first element of the array is a falsy value. Thus, count+=1 only runs 3 times. That's why the answer to this question is option "C".</i>
 
 </p>
 </details>
