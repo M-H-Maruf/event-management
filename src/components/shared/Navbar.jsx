@@ -118,7 +118,7 @@ const Navbar = () => {
                 SIGN OUT
               </div>
             </Link>
-            <div className="dropdown dropdown-open dropdown-end">
+            <div className="dropdown dropdown-end">
               <label tabIndex={0} className="">
                 <img className="h-12 rounded-full w-12 object-cover object-center" src={user.photoURL} alt="profile picture" onError= {()=>this.src='https://i.ibb.co/MVzMp2j/istockphoto-1307140504-612x612.jpg'}/>
               </label>
@@ -132,7 +132,7 @@ const Navbar = () => {
                   <div data-aos="flip-up" className="rounded-lg h-full z-10">
                     
                     <div className="">
-                      {console.log(user)}
+                    
                       <h3 className="text-lg font-teko text-black font-bold mb-2">{user.displayName}</h3>
                       <p className="text-black/70 font-bold">{user.email}</p>
                     </div>
