@@ -9,6 +9,7 @@ import Register from './../components/auth/Register';
 import Blog from "../components/blog/Blog";
 import Venue from "../components/venue/Venue";
 import BlogDetail from "../components/blog/BlogDetail";
+import ServiceDetails from './../components/home/services/ServiceDetails';
 
 
 
@@ -36,6 +37,10 @@ const routes = createBrowserRouter([
             path: "/blog/:id",
             loader: ()=> fetch("/data/blogs.json"),
             element: <BlogDetail></BlogDetail>
+        },
+        {
+            path: "/services/:id",
+            element: <ServiceDetails></ServiceDetails>
         },
         {
             path: "/venue",

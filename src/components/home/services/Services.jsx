@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../hooks/AuthProvider";
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const { services } = useContext(AuthContext);
@@ -33,9 +34,9 @@ const Services = () => {
                 </h2>
               </div>
               <p>{service.short_description}</p>
-              <button className="btn btn-block btn-outline btn-accent">
-                Buy Now
-              </button>
+              <Link to={`/services/${service.id}`} className="btn btn-block btn-outline btn-accent">
+                Show More
+              </Link>
             </div>
           </div>
         ))}

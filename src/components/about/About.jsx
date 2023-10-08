@@ -11,7 +11,7 @@ const About = () => {
       >
         About Us
       </h1>
-      <div className=" py-10 px-6">
+      <div className=" py-10 px-6 max-w-6xl">
 
         {/* intro */}
         <div className=""><p data-aos="flip-up" className="font-bold mb-4">
@@ -59,9 +59,9 @@ const About = () => {
             diverse range of skills and experiences to the table, ensuring that
             we can tackle any challenge with creativity and expertise.
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-4 font-bold">
+          <div className="grid grid-cols-1 my-16 lg:grid-cols-2 justify-center items-center gap-y-24 gap-x-16 font-bold">
             {teamMembers.map((member, index) => (
-              <div data-aos="flip-left" key={index} className="bg-white/90 p-6 rounded shadow-2xl">
+              <div data-aos="flip-left" key={index} className="bg-white/80 p-6 rounded shadow-2xl">
                 <img
                   src={member.imageUrl}
                   alt={member.name}
