@@ -3,7 +3,7 @@ import Particle from "./../home/Particle";
 
 const About = () => {
   const teamMembers = useLoaderData();
-  console.log(teamMembers);
+  
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/VYM4s3t/matteo-vistocco-Dph00-R2-Sw-Fo-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center py-36 tracking-normal text-justify">
       <div>

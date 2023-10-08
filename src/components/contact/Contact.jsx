@@ -20,7 +20,7 @@ const Contact = () => {
         publicKey
       )
       .then(
-        (result) => {
+        () => {
           Swal.fire({
             position: "bottom-end",
             icon: "success",
@@ -29,9 +29,9 @@ const Contact = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          console.log(result.text);
+          
         },
-        (error) => {
+        () => {
           Swal.fire({
             position: "bottom-end",
             icon: "error",
@@ -41,7 +41,7 @@ const Contact = () => {
             timer: 1500,
           });
 
-          console.log(error.text);
+          
         }
       );
   };

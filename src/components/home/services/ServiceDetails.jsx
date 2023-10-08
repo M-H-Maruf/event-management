@@ -11,7 +11,7 @@ const ServiceDetails = () => {
   if (!service) {
     return <ErrorPage></ErrorPage>;
   }
-  console.log(service);
+  
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/VYM4s3t/matteo-vistocco-Dph00-R2-Sw-Fo-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center pb-36 pt-28 px-8 md:px-16 tracking-normal text-justify">
       <h1

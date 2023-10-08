@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 import { AuthContext } from "./../../hooks/AuthProvider";
 import { BsGoogle } from "react-icons/bs";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Particle from "./../home/Particle";
 
 const LogIn = () => {
@@ -12,13 +12,15 @@ const LogIn = () => {
     passwordReset,
   } = useContext(AuthContext);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const emailRef = useRef(null);
 
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
 
-    
     const email = form.get("email");
     const password = form.get("password");
 
@@ -57,7 +59,7 @@ const LogIn = () => {
     }
 
     signInWithEmail(email, password)
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           position: "bottom-end",
           icon: "success",
@@ -66,7 +68,8 @@ const LogIn = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log(result.user);
+        navigate(location?.state ? location.state : '/');
+        
       })
       .catch((error) => {
         Swal.fire({
@@ -77,13 +80,13 @@ const LogIn = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.error(error);
+        
       });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           position: "bottom-end",
           icon: "success",
@@ -92,9 +95,10 @@ const LogIn = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.log(result.user);
+        navigate(location?.state ? location.state : '/');
+        
       })
-      .catch((error) => {
+      .catch(() => {
         Swal.fire({
           position: "bottom-end",
           icon: "error",
@@ -103,7 +107,7 @@ const LogIn = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.error(error);
+        
       });
   };
 

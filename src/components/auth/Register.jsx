@@ -60,7 +60,7 @@ const Register = () => {
     }
 
     createUserWithEmail(email, password)
-      .then((result) => {
+      .then(() => {
         updateNameAndPhotoUrl(name, photo);
         Swal.fire({
           position: "bottom-end",
@@ -71,7 +71,7 @@ const Register = () => {
           timer: 1500,
         });
         navigate("/login");
-        console.log(result.user);
+        
       })
       .catch((error) => {
         Swal.fire({
@@ -82,13 +82,13 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
-        console.error(error);
+        
       });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then((result) => {
+      .then(() => {
         Swal.fire({
           position: "bottom-end",
           icon: "success",
@@ -98,7 +98,7 @@ const Register = () => {
           timer: 1500,
         });
         navigate("/");
-        console.log(result.user);
+        
       })
       .catch((error) => {
         Swal.fire({

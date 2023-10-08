@@ -31,7 +31,7 @@ const Navbar = () => {
           timer: 1500,
         });
       }
-      console.log(result);
+      
     })
     .catch()
 

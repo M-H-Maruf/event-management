@@ -37,10 +37,10 @@ const AuthProvider = ({ children }) => {
     updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: url
-    }).then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
+    }).then(() => {
+      
+    }).catch(() => {
+      
     });
   }
 
@@ -91,7 +91,7 @@ const AuthProvider = ({ children }) => {
   // monitoring user state
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
-        console.log('user in the auth state changed', currentUser);
+        
         setUser(currentUser);
         setLoading(false);
     });
