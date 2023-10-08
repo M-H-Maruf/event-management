@@ -10,31 +10,28 @@ const Navbar = () => {
 
   const handleSignOut = () => {
     logOut()
-    .then((result)=>{
-      if (!result) {
-        Swal.fire({
-          position: "bottom-end",
-          icon: "success",
-          title: "Success!",
-          text: "Sign Out Succeeded",
-          showConfirmButton: false,
-          timer: 2500,
-        });
-      }
-      else {
-        Swal.fire({
-          position: "bottom-end",
-          icon: "error",
-          title: "Error!",
-          text: "Oops! Something went wrong\n Sign out failed!",
-          showConfirmButton: false,
-          timer: 2500,
-        });
-      }
-      
-    })
-    .catch()
-
+      .then((result) => {
+        if (!result) {
+          Swal.fire({
+            position: "bottom-end",
+            icon: "success",
+            title: "Success!",
+            text: "Sign Out Succeeded",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+        } else {
+          Swal.fire({
+            position: "bottom-end",
+            icon: "error",
+            title: "Error!",
+            text: "Oops! Something went wrong\n Sign out failed!",
+            showConfirmButton: false,
+            timer: 2500,
+          });
+        }
+      })
+      .catch();
   };
 
   // active route styling
@@ -83,6 +80,7 @@ const Navbar = () => {
     closed: { opacity: 0, x: "-100%" },
   };
   const [isOpen, setIsOpen] = useState(false);
+  
 
   return (
     <div
@@ -114,11 +112,35 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex gap-2 lg:gap-6">
         {user ? (
-          <Link onClick={handleSignOut} className=" group" to="/">
-            <div className="btn glass text-white opacity-80 group-hover:text-event-secondary">
-              SIGN OUT
+          <div className="flex gap-4">
+            <Link onClick={handleSignOut} className=" group" to="/">
+              <div className="btn glass text-white opacity-80 group-hover:text-event-secondary">
+                SIGN OUT
+              </div>
+            </Link>
+            <div className="dropdown dropdown-open dropdown-end">
+              <label tabIndex={0} className="">
+                <img className="h-12 rounded-full w-12 object-cover object-center" src={user.photoURL} alt="profile picture" onError= {()=>this.src='https://i.ibb.co/MVzMp2j/istockphoto-1307140504-612x612.jpg'}/>
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] p-5 menu w-64 relative" 
+              >
+
+                <div className="flex justify-center items-center p-2 font-bold  rounded bg-white/50 shadow-2xl absolute right-0 w-56">
+
+                  <div data-aos="flip-up" className="rounded-lg h-full z-10">
+                    
+                    <div className="">
+                      {console.log(user)}
+                      <h3 className="text-lg font-teko text-black font-bold mb-2">{user.displayName}</h3>
+                      <p className="text-black/70 font-bold">{user.email}</p>
+                    </div>
+                  </div>
+                </div>
+              </ul>
             </div>
-          </Link>
+          </div>
         ) : (
           <div className=" flex gap-2 lg:gap-6">
             <Link className=" group" to="/login">

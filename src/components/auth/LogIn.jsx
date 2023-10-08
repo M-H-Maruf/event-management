@@ -9,8 +9,8 @@ const LogIn = () => {
   const {
     signInWithEmail,
     signInWithGoogle,
-    passwordReset,
   } = useContext(AuthContext);
+  
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -59,7 +59,7 @@ const LogIn = () => {
     }
 
     signInWithEmail(email, password)
-      .then(() => {
+      .then((result) => {
         Swal.fire({
           position: "bottom-end",
           icon: "success",
@@ -68,6 +68,8 @@ const LogIn = () => {
           showConfirmButton: false,
           timer: 2500,
         });
+        
+        console.log(result);
         navigate(location?.state ? location.state : '/');
         
       })
@@ -103,10 +105,12 @@ const LogIn = () => {
           showConfirmButton: false,
           timer: 2500,
         });
+        
         navigate(location?.state ? location.state : '/');
         
       })
-      .catch(() => {
+      .catch((error) => {
+        console.log(error);
         Swal.fire({
           position: "bottom-end",
           icon: "error",
@@ -119,27 +123,27 @@ const LogIn = () => {
       });
   };
 
-  const handleForgotPassword = () => {
-    const email = emailRef.current.value;
-    let errorText = "";
-    if (!email) {
-      errorText = "Please enter your email address";
-    } else if (
-      !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)
-    ) {
-      errorText = "Please enter a valid email address";
-    }
-    if (errorText) {
-      Swal.fire({
-        position: "bottom-end",
-        icon: "error",
-        title: "INVALID EMAIL!",
-        text: errorText,
-        showConfirmButton: false,
-        timer: 2500,
-      });
-    } else passwordReset(email);
-  };
+  // const handleForgotPassword = () => {
+  //   const email = emailRef.current.value;
+  //   let errorText = "";
+  //   if (!email) {
+  //     errorText = "Please enter your email address";
+  //   } else if (
+  //     !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(email)
+  //   ) {
+  //     errorText = "Please enter a valid email address";
+  //   }
+  //   if (errorText) {
+  //     Swal.fire({
+  //       position: "bottom-end",
+  //       icon: "error",
+  //       title: "INVALID EMAIL!",
+  //       text: errorText,
+  //       showConfirmButton: false,
+  //       timer: 2500,
+  //     });
+  //   } else passwordReset(email);
+  // };
 
   return (
     <div className=" bg-black/80 bg-[url('https://i.ibb.co/VYM4s3t/matteo-vistocco-Dph00-R2-Sw-Fo-unsplash.jpg')] bg-cover bg-center bg-blend-darken text-white flex flex-col justify-center items-center pb-36 pt-28 tracking-normal text-justify">
@@ -186,12 +190,12 @@ const LogIn = () => {
                 className="bg-white/30 p-3 rounded border border-gray-300 w-64"
               />
             </div>
-            <a
+            {/* <a
               onClick={handleForgotPassword}
               className="label-text text-event-primary hover:text-white text-lg font-bold-alt link link-hover hover:underline"
             >
               Forgot password?
-            </a>
+            </a> */}
 
             <div className="form-control -mt-6">
               <button className="btn glass text-white hover:text-event-secondary">
