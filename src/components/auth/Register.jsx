@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 import { AuthContext } from "./../../hooks/AuthProvider";
 import { BsGoogle } from "react-icons/bs";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Particle from "./../home/Particle";
 
 const Register = () => {
@@ -14,6 +14,7 @@ const Register = () => {
   } = useContext(AuthContext);
 
   const emailRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const Register = () => {
     const email = form.get("email");
     const password = form.get("password");
 
+    // Password Verification
     if (password.length < 6) {
       Swal.fire({
         icon: "error",
@@ -35,7 +37,6 @@ const Register = () => {
       return;
     }
 
-    // Password Verification
     if (!/[A-Z]/.test(password)) {
       Swal.fire({
         icon: "error",
@@ -47,7 +48,6 @@ const Register = () => {
       return;
     }
 
-    // Check for at least one special character
     if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
       Swal.fire({
         icon: "error",
@@ -70,6 +70,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/login");
         console.log(result.user);
       })
       .catch((error) => {
@@ -96,6 +97,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/");
         console.log(result.user);
       })
       .catch((error) => {
@@ -231,7 +233,7 @@ const Register = () => {
             Already have account? Please{" "}
             <Link to="/login">
               <button className="text-event-primary hover:text-white text-lg font-bold-alt link link-hover hover:underline px-0">
-                Login
+                Sign In
               </button>
             </Link>{" "}
           </p>

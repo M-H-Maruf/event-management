@@ -10,6 +10,7 @@ import Blog from "../components/blog/Blog";
 import Venue from "../components/venue/Venue";
 import BlogDetail from "../components/blog/BlogDetail";
 import ServiceDetails from './../components/home/services/ServiceDetails';
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -31,7 +32,7 @@ const routes = createBrowserRouter([
         {
             path: "/blog",
             loader: ()=> fetch("/data/blogs.json"),
-            element: <Blog></Blog>
+            element: <PrivateRoute><Blog></Blog></PrivateRoute>
         },
         {
             path: "/blog/:id",
@@ -40,12 +41,12 @@ const routes = createBrowserRouter([
         },
         {
             path: "/services/:id",
-            element: <ServiceDetails></ServiceDetails>
+            element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>
         },
         {
             path: "/venue",
             loader: ()=> fetch("/data/venues.json"),
-            element: <Venue></Venue>
+            element: <PrivateRoute><Venue></Venue></PrivateRoute>
         },
         {
             path: "/contact",

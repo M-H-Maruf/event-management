@@ -10,7 +10,7 @@ const About = () => {
         {" "}
         <h1
           data-aos="fade-down"
-          className="text-6xl text-event-primary font-black font-orbitron mb-4"
+          className="text-6xl text-event-primary text-center font-black font-orbitron mb-4"
         >
           About Us
         </h1>
