@@ -33,7 +33,7 @@ const Navbar = () => {
         to="/venue"
         className={({ isActive }) => (isActive ? activeLink : "")}
       >
-        Venue
+        VENUE
       </NavLink>
       <NavLink
         to="/contact"

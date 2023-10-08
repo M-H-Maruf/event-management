@@ -39,6 +39,7 @@ const routes = createBrowserRouter([
         },
         {
             path: "/venue",
+            loader: ()=> fetch("/data/venues.json"),
             element: <Venue></Venue>
         },
         {
