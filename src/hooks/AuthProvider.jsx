@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
       title: "Success!",
       text: "Password Reset Mail Sent To Your Email",
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2500,
     });
   })
   .catch((error) => {
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
       title: "Error!",
       text: "Oops! Password Reset Failed",
       showConfirmButton: false,
-      timer: 1500,
+      timer: 2500,
     });
     console.error(error);
   });

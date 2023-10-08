@@ -11,6 +11,7 @@ import Venue from "../components/venue/Venue";
 import BlogDetail from "../components/blog/BlogDetail";
 import ServiceDetails from './../components/home/services/ServiceDetails';
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from './../components/shared/ErrorPage';
 
 
 
@@ -18,6 +19,7 @@ import PrivateRoute from "./PrivateRoute";
 const routes = createBrowserRouter([
     {
       path: "/",
+      errorElement: <ErrorPage></ErrorPage>,
       element: <Root></Root>,
       children: [
         {

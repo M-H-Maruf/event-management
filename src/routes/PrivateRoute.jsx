@@ -9,7 +9,8 @@ const PrivateRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <span className="absolute top-[50vh] left-[50vw] loading loading-infinity loading-lg text-6xl text-accent -translate-x-1/2 -translate-y-1/2"></span>
+        <div className="absolute flex justify-center items-center z-50 h-screen w-screen top-0 left-0 right-0 overflow-hidden bg-event-secondary"><span className=" loading loading-infinity loading-lg text-accent"></span></div>
+      
     );
   }
 

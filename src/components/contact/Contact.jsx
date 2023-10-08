@@ -27,7 +27,7 @@ const Contact = () => {
             title: "Success!",
             text: "Email sent successfully",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2500,
           });
           
         },
@@ -38,7 +38,7 @@ const Contact = () => {
             title: "Error!",
             text: "Oops! Something went wrong",
             showConfirmButton: false,
-            timer: 1500,
+            timer: 2500,
           });
 
           
@@ -53,7 +53,7 @@ const Contact = () => {
         title: "Sorry!",
         text: "Email service not working",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2500,
       });
   }
 

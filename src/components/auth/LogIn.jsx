@@ -30,7 +30,7 @@ const LogIn = () => {
         icon: "error",
         position: "bottom-end",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2500,
         text: "Password must be at least 6 characters long",
       });
       return;
@@ -41,7 +41,7 @@ const LogIn = () => {
         icon: "error",
         position: "bottom-end",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2500,
         text: "Password must contain at least one capital letter",
       });
       return;
@@ -52,7 +52,7 @@ const LogIn = () => {
         icon: "error",
         position: "bottom-end",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2500,
         text: "Password must contain at least one special character",
       });
       return;
@@ -66,19 +66,27 @@ const LogIn = () => {
           title: "Success!",
           text: "Sign In Succeeded",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2500,
         });
         navigate(location?.state ? location.state : '/');
         
       })
       .catch((error) => {
+        let errorSignIn ='';
+        console.log(error.code);
+        if (error.code == 'auth/invalid-login-credentials') {
+          errorSignIn = "Email or password doesn't match"
+        }
+        else {
+          errorSignIn = error.code;
+        }
         Swal.fire({
           position: "bottom-end",
           icon: "error",
           title: "Error!",
-          text: "Oops! Something went wrong\n" + error.message,
+          text: "Oops! Something went wrong.\n"+ errorSignIn,
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2500,
         });
         
       });
@@ -93,7 +101,7 @@ const LogIn = () => {
           title: "Success!",
           text: "Sign Up Succeeded With Google",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2500,
         });
         navigate(location?.state ? location.state : '/');
         
@@ -105,7 +113,7 @@ const LogIn = () => {
           title: "Error!",
           text: "Oops! Something went wrong",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2500,
         });
         
       });
@@ -128,7 +136,7 @@ const LogIn = () => {
         title: "INVALID EMAIL!",
         text: errorText,
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2500,
       });
     } else passwordReset(email);
   };

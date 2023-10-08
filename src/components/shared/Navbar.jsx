@@ -18,7 +18,7 @@ const Navbar = () => {
           title: "Success!",
           text: "Sign Out Succeeded",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2500,
         });
       }
       else {
@@ -28,7 +28,7 @@ const Navbar = () => {
           title: "Error!",
           text: "Oops! Something went wrong\n Sign out failed!",
           showConfirmButton: false,
-          timer: 1500,
+          timer: 2500,
         });
       }
       
