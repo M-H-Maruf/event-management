@@ -26,5 +26,6 @@ This website offers
 - Background overlays and amazing positoning of components.
 - Separate json data to make the website more editable.
 - Intuitive names to make the source code more readable.
+- Amazing vertical secondary navbar to navigate through the home page with tooltips.
 
 
