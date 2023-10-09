@@ -1,4 +1,4 @@
-# [AZTEC]([https://www.your-event-site.com](https://event-management-9d41d.web.app/))
+# [AZTEC](https://event-management-9d41d.web.app/)
 
 ## Description
 
