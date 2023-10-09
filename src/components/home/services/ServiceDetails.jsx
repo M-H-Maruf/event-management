@@ -23,7 +23,7 @@ const ServiceDetails = () => {
 
       <div
         data-aos="flip-left"
-        className="bg-black/80 shadow-2xl rounded tracking-tight w-full max-w-6xl z-10"
+        className="bg-black/80 shadow-2xl rounded tracking-tight max-w-xl z-10"
       >
         <img
           className="h-full rounded-t-lg object-cover object-center"
